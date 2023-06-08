@@ -5,16 +5,16 @@ exports.up = function (knex) {
     table.integer("score").notNullable();
     table.integer("movie_id").unsigned().notNullable();
     table
-            .foreign("movie_id")
-            .references("movie_id")
-            .inTable("movies")
-            .onDelete("cascade");
+      .foreign("movie_id")
+      .references("movie_id")
+      .inTable("movies")
+      .onDelete("cascade");
     table.integer("critic_id").unsigned().notNullable();
     table
-            .foreign("critic_id")
-            .references("critic_id")
-            .inTable("critics")
-            .onDelete("cascade");
+      .foreign("critic_id")
+      .references("critic_id")
+      .inTable("critics")
+      .onDelete("cascade");
     table.timestamps(true, true);
   });
 };
